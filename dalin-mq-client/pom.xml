@@ -8,7 +8,6 @@
   <artifactId>dalin-rocket-client</artifactId>
   <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>rocketmq-autoconfigure</module>
         <module>rocketmq-starter</module>
         <module>rocketmq-example</module>
     </modules>
