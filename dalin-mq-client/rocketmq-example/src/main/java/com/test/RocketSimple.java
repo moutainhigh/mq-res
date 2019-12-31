@@ -10,7 +10,6 @@ import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.LocalTransactionState;
-import org.apache.rocketmq.client.producer.TransactionCheckListener;
 import org.apache.rocketmq.client.producer.TransactionListener;
 import org.apache.rocketmq.client.producer.TransactionMQProducer;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
@@ -105,15 +104,5 @@ public class RocketSimple {
 				System.out.println(new String(msg.getBody()));
 			return LocalTransactionState.COMMIT_MESSAGE;
 		}
-	}
-	
-	static class CheckListener implements TransactionCheckListener{
-		
-		@Override
-		public LocalTransactionState checkLocalTransactionState(MessageExt msg) {
-			System.out.println("checkListener"+new String(msg.getBody()));
-			return LocalTransactionState.COMMIT_MESSAGE;
-		}
-		
 	}
 }

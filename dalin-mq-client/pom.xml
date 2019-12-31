@@ -24,6 +24,7 @@
     <lombok.version>1.18.8</lombok.version>
     <fastjson.version>1.2.58</fastjson.version>
     <rocket-client.version>4.5.2</rocket-client.version>
+    <junit.version>4.12</junit.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -50,29 +51,23 @@
 		    <artifactId>rocketmq-client</artifactId>
 		    <version>${rocket-client.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			 <artifactId>junit</artifactId>
+			 <version>${junit.version}</version>
+		</dependency>
     </dependencies>
     
   </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-
-    
-  </dependencies>
 
   <build>
     <finalName>dalin-rocket-client</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
